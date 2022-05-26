@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    background: linear-gradient(to  bottom, rgba(235, 235, 235, 0.123), rgba(83, 83, 83, 0.404));
+    height: 100vh;
+    width: 100%;
+    visibility: hidden;
+    transition: all .3s ease-in;
+    opacity: 0;
+}
+body{
+    background-image: url('../images/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-position: 140% -20%;
+}
+.special-bg{
+    background-image: url('../images/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-position: -80% 70%;
+}
+#cta{
+    background-image:url('../images/bg-simplify-section-desktop.svg') ;
+    background-repeat: no-repeat;
+    background-position: -120% 70%;
+}
+.mobile-menu{
+    transition: all .2s ease-in;
+    opacity: 0;
+    }
+
+.hamburger{
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+    
+}
+.hamburger > div{
+    width: 23px;
+    height: 3px;
+    transition: all .2s ease-in;
+    background-color: hsl(228, 39%, 23%);
+    position: relative;
+}
+.open{
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+.open .ham-top{
+    transform: rotate(45deg) translateY(6px) translate(5px);
+}
+.open .ham-middle{
+    display: none;
+}
+.open .ham-bottom{
+    transform: rotate(-45deg) translateY(-.98px) translate(-1.2px);
+}
+.button{
+    box-shadow: 0px 6px 6px hsl(12, 100%, 79%);
+}
+
+@media(max-width:976px){
+    .input-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+    }
+}
+@media(max-width:767px){
+    body{
+        background-repeat: no-repeat;
+        background-position:-120% -5%;
+        background-size: 500px;
+    }
+
+    #cta{
+        background-image: url('../images/bg-simplify-section-mobile.svg') ;
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+        
+    }
+    .special-bg{
+        background-image: url('');
+    }
+    #testimonials{
+        overflow-x: hidden;
+    }
+    .testimonial-slide{
+        width: 300%;
+        position: relative;
+        transition: all .3s ease-in;
+        
+    }
+    .testimonial-box{
+        width: 100%;
+        
+    }
+    .testimonial-control{
+        width: 10%;
+    }
+    .testimonial-control span{
+        border: 1px solid hsl(12, 88%, 59%) ;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .active{
+        background-color:hsl(12, 88%, 59%) ;
+        
+    }
+}
+@media(max-width:430px){
+    body{
+        background-position:-20% -10%;
+        background-size: 600px;
+    }
+}
